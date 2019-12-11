@@ -1,11 +1,11 @@
-console.log('hello world');
+//console.log('hello world');
 
 $(document).ready(function(){
 
   $('body').on('submit', 'form', function(event) {
     event.preventDefault();
     let breedType = $('input').val().toLowerCase();
-    console.log(breedType);
+    //console.log(breedType);
     getDogImage(breedType);
   });
 
@@ -19,14 +19,12 @@ let getDogImage = function(breedType) {
       if (responseJson.status === 'error') {
         alert("That's not a real breed!");
       }
-      console.log(responseJson);
+      //console.log(responseJson);
     })
     .catch(error => alert('nope, something went wrong'));
 };
 
 function displayResults(responseJson){
-  
-  //$('.results').empty();
   $('.results').html(
     `<img src="${responseJson}" class="img-result"/>`
   );
